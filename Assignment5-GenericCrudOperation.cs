@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 
@@ -17,7 +17,7 @@ namespace day7_Collection_Generic
         };
         public void Entry(string str)
         {
-            Console.WriteLine("Add data in list  used \n");
+            Console.WriteLine("Add Element in the List\n");
             countries.Add(str);
             foreach (string temp in countries)
             {
@@ -30,30 +30,29 @@ namespace day7_Collection_Generic
             if (countries.Contains(str))
             {
                 countries.Remove(str);
-                Console.WriteLine("After the remove function print list \n ");
+                Console.WriteLine("Show List After Remove the Element \n ");
                 foreach (string temp in countries)
                 {
                     Console.WriteLine(temp);
                 }
             }
             else
-                Console.WriteLine("Data is Not Available in the list");
+                Console.WriteLine("Element is not Available in the list");
             Console.WriteLine() ;
         }
         public void SearchData(string str)
         {
             var search=countries.Contains(str);
-            Console.WriteLine("Search data in list \n ");
             if(search==true)
-               Console.WriteLine("Data is Available in the list");
+               Console.WriteLine("Element is Available in the list");
             else
-                Console.WriteLine("Data is Not Available in the list");
+                Console.WriteLine("Element is Not Available in the list");
         }
         public void updateData(string str)
         {
             if (countries.Contains(str))
             { 
-                Console.WriteLine("Available, Check if the data is correct otherwise update \n ");
+                Console.WriteLine("Element is available,Lets Update:\n ");
                 countries.Remove(str);
                 Console.Write("Enter the new data:-");
                 string str2 = Console.ReadLine();
@@ -64,13 +63,13 @@ namespace day7_Collection_Generic
                 } 
             }
             else
-                Console.WriteLine("Data is Not available in list");
+                Console.WriteLine("Element is not available in list");
 
             Console.WriteLine();
         }
         public void fetchAllData()
         {
-            Console.WriteLine("Show All Data In  the List\n");
+            Console.WriteLine("Show All Element in  the List\n");
             foreach (string temp in countries) 
             { 
                 Console.WriteLine(temp);
@@ -82,15 +81,16 @@ namespace day7_Collection_Generic
         public static void Main()
         {
             var obj= new Countries();
-            Console.WriteLine("Enter 1 for Element add in the list:-");
-            Console.WriteLine("Enter 2 for  Element remove in the list:-");
-            Console.WriteLine("Enter 3 for Element Search in the list:-");
-            Console.WriteLine("Enter 4 for Element update in the list:-");
-            Console.WriteLine("Enter 5 for Element fetchall in the list:-");
-            Console.WriteLine("Enter your Choice");
-            int choice=Convert.ToInt32(Console.ReadLine());
+            bool check = true;
             while (true)
             {
+                Console.WriteLine("1:Add in the list:-");
+                Console.WriteLine("2:Remove in the list:-");
+                Console.WriteLine("3:Search in the list:-");
+                Console.WriteLine("4:Update in the list:-");
+                Console.WriteLine("5:FetchAll in the list:-");
+                Console.WriteLine("Enter your Choice");
+                int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
                     case 1:
@@ -119,15 +119,11 @@ namespace day7_Collection_Generic
                     case 5:
                         obj.fetchAllData();
                         break;
+
+                     case 6:
+                        check = false; 
+                        break;
                 }
-                Console.WriteLine("If you want perform any other operation in the list");
-                string str = Console.ReadLine();
-                if (str == "yes")
-                    Main();
-                else
-                    Console.WriteLine("terminated program");
-                break;
-            
             }
         }
     }
