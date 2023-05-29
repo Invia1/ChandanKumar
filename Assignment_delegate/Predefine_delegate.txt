@@ -1,0 +1,32 @@
+                       ------------------------------------------------------------------------------------------------------------------                       
+                                                       Action,Fun and Predicate all belong to the delegate Family.
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1:-Action:Action can take n input(min 0,max 16) parameter but it return void.
+
+2:-Func:Func can take n input(min 0,max 16) parameter but it will always return the result of provided type.
+
+     Func<T1,T2,T3,TResult> ,here T1,T2,T3 are input parameter and TResult is the output of it.
+
+3:-Predicate :Predicate is also a form of func but it will always return bool.In simple words it is wrapper of Func<T,bool>.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+                                              Comparison on behalf of type and return type and parameter
+                                           --------------------------------------------------------------------------
+       Type                  Return Type                         Min Parameter                          Max Parameter
+
+     Action                Void                                         0                                              16
+
+     Func                   Except void                             0                                              16
+    
+     Predicate            bool                                          1                                               1
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+When we use Func:- It is used if the method is value return method.And about Parameter- Up to 16 input and 1 Parameter for Output.
+
+When we use Action:-  It is used if the method is non-value(without return) return method.And about Parameter- Up to 16 input.
+
+When we use Predicate:-It can take a single parameter only and return type is going to be fixed is "bool" and can't change return type.
+
+*In case of Predicate delegate is also used Func delegate also fullfilled the requirement.
+*If return type is bool then use Predicate is good practice.
+
